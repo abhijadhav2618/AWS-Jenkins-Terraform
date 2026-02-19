@@ -1,0 +1,36 @@
+name : terraform/plan
+on :
+  pull_request:
+
+permissions:
+  id-token: write
+  contents: read 
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v5
+      
+      - name: Verify clone
+        run: echo "Cloned successfully"
+
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v6.0.0
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::731176811050:role/Github-AWS-Integration
+          role-session-name: MySessionName
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Initt
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
