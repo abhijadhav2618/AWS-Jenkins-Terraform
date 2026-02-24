@@ -10,7 +10,7 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
     environment: dev
-    
+
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v5
@@ -25,7 +25,7 @@ jobs:
           role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
           role-session-name: MySessionName
 
-      - name: Setup Terraform
+      - name: Setup Terraformm
         uses: hashicorp/setup-terraform@v3
 
       - name: Debug Variables
