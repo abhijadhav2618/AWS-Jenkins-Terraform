@@ -20,8 +20,8 @@ jobs:
       - name: configure aws credentials by web identity
         uses: aws-actions/configure-aws-credentials@v6
         with:
-          aws-region: ${{ secrets.AWS_REGION}}
-          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::731176811050:role/Github-AWS-Integration
           role-session-name: MySessionName
 
       - name: Setup Terraformm
