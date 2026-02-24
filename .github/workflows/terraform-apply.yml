@@ -14,7 +14,7 @@ jobs:
     environment: Dev
 
     steps:
-      - name: git checkoutt
+      - name: git checkout
         uses: actions/checkout@v5
 
       - name: configure aws credentials by web identity
