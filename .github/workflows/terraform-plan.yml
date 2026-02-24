@@ -26,6 +26,9 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Debug Variables
+        run: env | grep TF_VAR
+
       - name: Terraform Init
         run: terraform init
 
