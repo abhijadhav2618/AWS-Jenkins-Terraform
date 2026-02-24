@@ -11,6 +11,8 @@ permissions:
 jobs:
   terraform-apply:
     runs-on: ubuntu-latest
+    environment: dev
+    
     steps:
       - name: git checkoutt
         uses: actions/checkout@v5
@@ -24,6 +26,9 @@ jobs:
 
       - name: Setup Terraformm
         uses: hashicorp/setup-terraform@v3
+
+      - name: Debug Variables
+        run: env | grep TF_VAR
 
       - name: Terraform Init
         run: terraform init
