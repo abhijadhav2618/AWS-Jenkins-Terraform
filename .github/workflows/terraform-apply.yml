@@ -11,8 +11,8 @@ permissions:
 jobs:
   terraform-apply:
     runs-on: ubuntu-latest
-    environment: dev
-    
+    environment: Dev
+
     steps:
       - name: git checkoutt
         uses: actions/checkout@v5
