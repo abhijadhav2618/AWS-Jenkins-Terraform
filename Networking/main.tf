@@ -1,14 +1,3 @@
-variable "vpc_name" {}
-variable "vpc_cidr" {}
-variable "cidr_public_subnets" {}
-variable "cidr_private_subnets" {}
-variable "availability_zones" {}
-variable "project_name" {}
-
-output "dev-project-abhi-vpc-id" {
-    value = aws_vpc.my_vpc.id
-}
-
 #VPC
 resource "aws_vpc" "my_vpc" {
     cidr_block = var.vpc_cidr
