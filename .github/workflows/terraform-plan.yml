@@ -9,6 +9,8 @@ permissions:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    environment: dev
+    
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v5
