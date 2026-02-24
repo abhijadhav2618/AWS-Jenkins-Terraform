@@ -9,7 +9,6 @@ permissions:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    environment: Dev
 
     steps:
       - name: Git clone the repository
@@ -27,9 +26,6 @@ jobs:
 
       - name: Setup Terraformm
         uses: hashicorp/setup-terraform@v3
-
-      - name: Debug Variables
-        run: env | grep TF_VAR
 
       - name: Terraform Init
         run: terraform init
