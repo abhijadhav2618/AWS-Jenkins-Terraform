@@ -22,10 +22,10 @@ jobs:
           role-to-assume: arn:aws:iam::731176811050:role/Github-AWS-Integration
           role-session-name: MySessionName
 
-      - name: Setup Terraform
+      - name: Setup Terraformm
         uses: hashicorp/setup-terraform@v3
 
-      - name: Terraform Initt
+      - name: Terraform Init
         run: terraform init
 
       # - name: Terraform plan
